@@ -32,25 +32,20 @@ def init():
 def update(frame):
     global y_pos1, y_vel1, y_pos2, y_vel2
 
-    # Update velocity and position for ball 1 based on gravity
     y_vel1 += gravity * time_step
     y_pos1 += y_vel1 * time_step
 
-    # Ball 1 bounce
     if y_pos1 - ball_radius < 0:
-        y_pos1 = ball_radius  # Prevent ball 1 from going below ground
-        y_vel1 = -y_vel1 * elasticity  # Reverse velocity for bounce
+        y_pos1 = ball_radius
+        y_vel1 = -y_vel1 * elasticity
 
-    # Update velocity and position for ball 2 based on gravity
     y_vel2 += gravity * time_step
     y_pos2 += y_vel2 * time_step
 
-    # Ball 2 bounce
     if y_pos2 - ball_radius < 0:
-        y_pos2 = ball_radius  # Prevent ball 2 from going below ground
-        y_vel2 = -y_vel2 * elasticity  # Reverse velocity for bounce
+        y_pos2 = ball_radius
+        y_vel2 = -y_vel2 * elasticity
 
-    # Update ball positions
     ball1.set_data(x_pos1, y_pos1)
     ball2.set_data(x_pos2, y_pos2)
 
