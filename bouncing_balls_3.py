@@ -51,8 +51,6 @@ def update(frame):
 
     return ball1, ball2
 
-# Animation function
 ani = FuncAnimation(fig, update, frames=np.arange(0, 200), init_func=init, blit=True, interval=20)
 
-# Show animation
 plt.show()
